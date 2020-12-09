@@ -1,0 +1,133 @@
+@charset "UTF-8";
+@import 'config';
+
+// Syntax Highlight: PrismJS
+
+// Color Scheme: Nord
+// Guideline: https://www.nordtheme.com/docs/colors-and-palettes
+// Polar Night
+$nord0: #2e3440;
+$nord1: #3b4252;
+$nord2: #434c5e;
+$nord3: #4c566a;
+$nord3a11y: #8a9cc2;
+// Snow Storm
+$nord4: #d8dee9;
+$nord5: #e5e9f0;
+$nord6: #eceff4;
+// Frost
+$nord7: #8fbcbb;
+$nord8: #88c0d0;
+$nord9: #81a1c1;
+$nord10: #5e81ac;
+// Aurora
+$nord11: #bf616a;
+$nord12: #d08770;
+$nord13: #ebcb8b;
+$nord14: #a3be8c;
+$nord15: #b48ead;
+$nord15a11y: #cca1c4;
+
+$color-bg: $nord0;
+$color-fg: $nord6;
+
+// inline code & code block
+code {
+  font-family: $font-family-code;
+  font-size: $font-size-code;
+  color: $color-fg;
+
+  background: none;
+  text-align: left;
+
+  white-space: pre-wrap;
+  word-spacing: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+// inline code
+:not(pre) > code {
+  background-color: $color-bg;
+  padding: 0.15em;
+  border-radius: 0.3em;
+}
+
+// code block
+// NOTE: Preferred selector is `pre:has(>code)` .
+// But :has() is not implemented on any browser yet.
+// If you write pre[class^="language-"] like official themes,
+// the style is not applied for non-language specificated codeblock.
+pre {
+  background-color: $color-bg;
+  color: $color-fg;
+  padding: 1em;
+  border-radius: 0.3em;
+  line-height: vr(0.75);
+}
+
+// Syntax highlight
+// c.f.:
+// Official Vim's colorscheme for choicing colors.
+// https://github.com/arcticicestudio/nord-vim
+// PrismJS's test files are good resources to understand means of tokens
+// https://github.com/PrismJS/prism/tree/master/tests/languages
+
+$syntax-highlight: (
+  "atrule": $nord12,
+  "attr-value": $nord14,
+  "boolean": $nord9,
+  "cdata": $nord3a11y,
+  "class-name": $nord7,
+  "comment": $nord3a11y,
+  "constant": $nord9,
+  "deleted": $nord13,
+  "doctype": $nord3a11y,
+  "entity": $nord13,
+  "function": $nord8,
+  "info": $nord3a11y,
+  "inserted": $nord14,
+  "interpolation": $color-fg,
+  "keyword": $nord9,
+  "method-definition": $nord8,
+  "number": $nord15a11y,
+  "namespace": $nord4,
+  "operator": $nord9,
+  "prolog": $nord3a11y,
+  "property": $nord7,
+  "regex": $nord13,
+  "selector": $nord7,
+  "shebang": $nord3a11y,
+  "string": $nord14,
+  "tag": $nord9,
+  "url": $nord4,
+  "variable": $nord4,
+);
+
+@each $token, $color in $syntax-highlight {
+  .token.#{$token} {
+    color: $color;
+  }
+}
+
+.token.bold, .token.important {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+.token.strike {
+  text-decoration: line-through;
+}
+

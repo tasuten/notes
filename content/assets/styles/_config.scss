@@ -1,0 +1,94 @@
+/* Typeface */
+$font-family-latin: 'Fira Sans' !default;
+// Windows:Consolas. macOS, iOS: Menlo. Android: Roboto Mono.
+$font-family-code: Consolas, Menlo, 'Roboto Mono', monospace !default;
+
+
+/* Font size */
+$font-size-base: 1rem !default;
+// Reasons to use `em` for font-size of code tag are
+// 1. For Chrome's bug with rem
+// 2. For cases that inline `code` is used in heading tags
+$font-size-code: 0.9375em !default;
+$font-size-smaller: 0.875em !default;
+
+
+/* Vertical */
+/* the line-height in Japanese is wider than that in English
+ * According to [jlreq],
+ * it is common that the line gap is between 1/2 and 1 of base font size
+ * in Japanese. (In other words, line-height is between 1.5 and 2.0)
+ * [jlreq]: https://www.w3.org/TR/jlreq/#considerations_in_designing_the_kihonhanmen)
+ */
+// When 1rem is 16px, (16px * 1.75) mod 4 = 0
+$line-height-base: 1.75 !default;
+// vertical rhythm
+@function vr($scale: 1){ // scale shoud be integer or integer+(n/4)
+  $virtical-rhythm-unit: $font-size-base * $line-height-base;
+  @return $scale * $virtical-rhythm-unit;
+}
+
+
+/* Horizontal */
+// about 40 chars(ja), 80chars(en)
+$max-width-content: 40 * $font-size-base !default;
+$min-width-side-margin: 1.5 * $font-size-base !default;
+
+
+/* Colors */
+$color-text: #111 !default;
+$color-aux: #ccc !default; // auxiliary color
+// e.g.) blockquote's marker, ...
+
+
+/* Media queries for responsive design */
+$breakpoint-width-sm-md: 560px !default;
+$breakpoint-width-md-lg: 960px !default;
+
+// On Media Queries Level 4, we'll be able to write like this
+// @media screen and (xxxx <= width < yyyy)
+
+// Small
+// - portrait mode of smart phones
+@mixin for-small-devices {
+  @media screen and (max-width: $breakpoint-width-sm-md - 1) {
+    @content
+  }
+}
+
+// Medium
+// - landscape mode of smart phones
+// - portrait mode of tables
+@mixin for-medium-devices {
+  @media screen and
+  (min-width: $breakpoint-width-sm-md) and
+  (max-width: $breakpoint-width-md-lg - 1) {
+    @content
+  }
+}
+
+// Large
+// - landscape mode of tables
+// - PCs
+@mixin for-large-devices {
+  @media screen and (min-width: $breakpoint-width-md-lg) {
+    @content
+  }
+}
+
+/* Other link style */
+// On larger text or icon text,
+// default link style (underline, etc...) is so laud.
+@mixin modest-link-style {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+// But on touch devices, it is difficult to find links
+// that is non-hover-able and non-decorated.
+// so alternate style.
+@mixin modest-link-touch-style {
+  text-decoration: underline dashed $color-aux;
+}
+

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+@import '../config';
+
+#all-posts {
+  h1 {
+    margin-bottom: vr(2);
+  }
+
+  .post + .post {
+    margin-top: vr(1);
+  }
+
+  dt.post-title {
+    font-size: $font-size-base * 5/4;
+
+    @include for-large-devices {
+      a {
+        @include modest-link-style;
+      }
+    }
+
+  @include for-medium-devices {
+    a {
+      @include modest-link-touch-style;
+    }
+  }
+
+  @include for-small-devices {
+    a {
+      @include modest-link-touch-style;
+    }
+  }
+
+  }
+}

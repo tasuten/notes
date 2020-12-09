@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+/* Acknowledgements:
+ * jgthms/minireset.css https://github.com/jgthms/minireset.css
+ * necolas/normalize.css https://github.com/necolas/normalize.css
+ * Browser Default Styles https://browserdefaultstyles.com/
+ * cf.:
+ * CSS2.2 Appendix D. Default style sheet for HTML 4
+ * https://www.w3.org/TR/CSS22/sample.html
+ */
+
+html {
+  box-sizing: border-box;
+}
+// Use inherit to allow to change in such a way below
+// `html /* (or any selector) */ { box-sizing: content-box; }`
+// https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  // Don't change text size on rotating mobile devices
+  -webkit-text-size-adjust: none; // iOS Safari requires -webkit-
+  text-size-adjust: none;
+}
+
+// It may not be as slow as they think
+// when the universal selector stands alone.
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  // Outline must not be 0 without any focus style config
+  // for accessibility.
+}
+
+body {
+  font-family: sans-serif; // Safari's default is serif
+  line-height: 1;
+}
+
+/* These tags is setted non-normal size / weight
+ * font-size:
+ *   h1, h2, h3, h5, h6
+ *   smaller: small, sub, sup
+ * font-weight:
+ *   bolder: th, h1-h6, b, strong
+ * font-style:
+ *   italic: i, cite, em, var, address
+ * font-family:
+ *   monospace: pre, code, kbd, samp
+ * text-decoration:
+ *   line-through: s, del
+ *   underline: u, ins, :link, :visited (:link is not-visited link)
+ * text-align:
+ *   center: th, caption
+ * colors of `a` tag differ by browsers
+ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-size: 100%;
+}
+
+small, sub, sup {
+  font-size: smaller; // IE's hardcoded size (0.83em)
+}
+
+th, b, strong {
+  font-weight: bolder; // Some browser is `bold`
+}
+
+
+pre, code, kbd, samp {
+  font-family: monospace, monospace; // For Chrome's odd sizing
+  font-size: 1em; // For IE's strange default font-size (10pt)
+  font-variant-ligatures: no-common-ligatures;
+  font-kerning: none;
+}
+
+/* ruby for Japanese */
+
+// ruby config reset
+rt {
+  font-size: 50%; // For IE. IE's default is so strange (6px)
+  // For non-Firefox browsers (default: normal)
+  font-variant-east-asian: ruby;
+}
+
+// unify to "space-around" mode
+// Acknowledgement: https://lopan.jp/ruby-element-style/
+rt {
+  text-align: inherit; // Chrome, Safari
+}
+
+ruby {
+  text-align: start; // Chrome, Safari
+  ruby-align: space-around; // Firefox
+  ruby-align: distribute-space; // IE, Edge
+}
+
+table {
+  border-collapse: collapse;
+}
+
+
+hr {
+  // When border is 0 by reset, hr is invisible, so I re-style.
+  // This style is so loudy to alert "STYLE ME!".
+  border-top: 1px dashed #f00;
+}
+
+// Add reset css for this tags below if you need.
+// - form tags
+

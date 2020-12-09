@@ -1,0 +1,109 @@
+@import 'config';
+
+$ratio-p: 5/4 !default; // primary: 4:5
+$ratio-s: 16/15 !default;// secondary: 15:16
+
+// PC first
+// Because tech site is read on PC display often.
+$headings-lg: (
+  $font-size-base * 2, // h1
+
+  // commonly used heading levels
+  $font-size-base * $ratio-p * $ratio-p * $ratio-p, // h2
+  $font-size-base * $ratio-p * $ratio-p, // h3
+
+  // not commonly used heading levels
+  $font-size-base * $ratio-p, // h4
+  $font-size-base * $ratio-s * $ratio-s, // h5
+  $font-size-base * $ratio-s, // h6
+  // In HTML, h7 and more is not defined.
+
+  // NOTE:
+  // $ratio-s^3 (1.213, h3*$ratio-s) < $ratio-p(1.25, h4)
+) !default;
+
+// h1-h6
+@for $level from 1 through 6 {
+  h#{$level} {
+    font-size: nth($headings-lg, $level);
+  }
+}
+
+h1 {
+  line-height: vr(1.75);
+}
+
+h2 {
+  margin-top: vr(5); // 前のテキストとの間
+  margin-bottom: vr(0.75); // その段落との間
+  line-height: vr(1.5);
+}
+
+h3 {
+  margin-top: vr(2);
+  margin-bottom: vr(0.5);
+  line-height: vr(1.25);
+}
+
+h2 + h3 {
+  margin-top: vr(1);
+}
+
+h4, h5, h6 {
+  margin-top: vr(0.5);
+  line-height: vr(1);
+}
+
+// Style for medium devices has minor changes between large devices
+@include for-medium-devices {
+  // nop
+}
+
+@include for-small-devices {
+  $headings-sm: (
+    $font-size-base * 1.75, // h1
+
+    // commonly used heading levels
+    $font-size-base * $ratio-p * $ratio-p, // h2
+    $font-size-base * $ratio-p, // h3
+
+    // not commonly used heading levels
+    $font-size-base * $ratio-s * $ratio-s, // h4
+    $font-size-base * $ratio-s, // h5
+    $font-size-base, // h6
+    // In HTML, h7 and more is not defined.
+
+  ) !default;
+
+  @for $level from 1 through 6 {
+    h#{$level} {
+      font-size: nth($headings-sm, $level);
+    }
+  }
+
+  h1 {
+    line-height: vr(1.5);
+  }
+
+  h2 {
+    margin-top: vr(2); // 前のテキストとの間
+    margin-bottom: vr(0.5); // その段落との間
+    line-height: vr(1.25);
+  }
+
+  h3 {
+    margin-top: vr(1.5); // 前のテキストとの間
+    margin-bottom: vr(0.25); // その段落との間
+    line-height: vr(1);
+  }
+
+  h2 + h3 {
+    margin-top: vr(0.75);
+  }
+
+  h4, h5, h6 {
+    margin-top: vr(0.5);
+    line-height: vr(1);
+  }
+}
+

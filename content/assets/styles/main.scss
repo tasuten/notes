@@ -1,0 +1,211 @@
+@charset "UTF-8";
+
+@import 'config';
+
+body {
+  color: $color-text;
+  font-family: $font-family-latin, sans-serif;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+
+  overflow-wrap: break-word;
+  hyphens: auto;
+
+  max-width: $max-width-content;
+  margin-left: auto;
+  margin-right: auto;
+
+  // essential margin
+  @media (max-width: $max-width-content + 2 * $min-width-side-margin) {
+    margin-left: $min-width-side-margin;
+    margin-right: $min-width-side-margin;
+  }
+}
+
+#site-title {
+
+  /* centering both of vertical and horizontal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: $font-size-base * 1.2;
+    font-variant-east-asian: proportional-width;
+  }
+
+  // it needs to display correctly
+  // wheh site tile is wrapped h1
+  h1 {
+    font-size: 100%;
+  }
+
+
+  height: vr(6);
+
+  @include for-small-devices {
+    height: vr(3);
+  }
+
+}
+
+#note-prologue {
+  margin-bottom: vr(3);
+  p {
+    margin-top: vr(0.5);
+    text-align: right;
+  }
+}
+
+#note-prologue + section > h2:first-child {
+  margin-top: unset;
+}
+
+a {
+  color: inherit; // same color as body text
+  text-decoration: underline;
+}
+
+// hover config on PC-size only
+@include for-large-devices {
+  a:hover {
+    text-decoration: underline dotted;
+  }
+}
+
+/*
+rt {
+text-transform: full-size-kana;
+}
+*/
+
+small, sup, sub {
+  font-size: $font-size-smaller;
+}
+
+sup {
+  font-variant-position: super;
+}
+
+sub {
+  font-variant-position: sub;
+}
+
+// 大きめの見出しでのみプロポーショナル仮名
+h1, h2, h3 {
+  font-variant-east-asian: proportional-width;
+}
+
+p + p {
+  margin-top: vr(0.5);
+}
+
+li {
+  margin-left: 1.5em; // for bullet and "1. "
+}
+
+article img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+blockquote {
+  padding-left: 2em;
+  @include for-small-devices {
+    padding-left: 1em;
+  }
+  border-left: $color-aux solid 0.8em;
+  cite {
+    display: block;
+    text-align: right;
+  }
+}
+
+table {
+  th, td {
+    padding: vr(0.25) 2em;
+    @include for-small-devices {
+      padding: vr(0.25) 0.5em;
+    }
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+// block elements in body text
+article {
+  blockquote, pre, table, span.katex-display {
+    margin-top: vr(1.5);
+    margin-bottom: vr(1.5);
+  }
+
+  img, span.gatsby-resp-image-wrapper {
+    margin-top: vr(2);
+    margin-bottom: vr(2);
+  }
+
+  ul, ol {
+    margin-top: vr(0.75);
+    margin-bottom: vr(0.75);
+    ul, ol {
+      // 入れ子で要素空きすぎるので
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+main + footer {
+  margin-top: vr(5);
+  margin-bottom: vr(1);
+}
+
+#copyright {
+  text-align: center;
+}
+
+// footnote format is hard-coded in miromark-extension-footnote
+// https://github.com/micromark/micromark-extension-footnote/blob/main/html.js
+div.footnotes {
+  font-size: $font-size-smaller;
+  margin-top: vr(4);
+
+  hr {
+    display: none;
+  }
+
+  p {
+    display: inline;
+  }
+
+  a.footnote-backref {
+    margin-left: 0.5em;
+    font-size: $font-size-smaller; // smaller twice
+    @include modest-link-style;
+  }
+}
+
+sup > a.footnote-ref {
+  @include modest-link-style;
+}
+
+
+/* katex hacks
+ * wrap well on small screen
+ * known bug:
+ * A case includes too long terms can't wrap well
+ * e.g.) 1111111...1 (1 x 100), 111,111,111,....111
+ */
+
+.katex-html {
+  white-space: pre-wrap;
+}
+
+@import 'responsive'

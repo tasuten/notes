@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+@import '../config';
+
+#about-site h2 {
+  margin-top: vr(1.5);
+}
+
+#recently-posts {
+  article:first-of-type h3 {
+    margin-top: vr(1.25);
+  }
+
+  @include for-large-devices {
+    h3 > a {
+      @include modest-link-style;
+    }
+  }
+
+  @include for-medium-devices {
+    h3 > a {
+      @include modest-link-touch-style;
+    }
+  }
+
+  @include for-small-devices {
+    h3 > a {
+      @include modest-link-touch-style;
+    }
+  }
+}
+
