@@ -25,7 +25,7 @@ const BlogIndex = ({ data, location }) => {
           もともにtasutenというIDになります。
         </p>
         <p>
-          このサイトについてなど連絡事項がありましたら上記のTwitter、当サイトのGitHubのIssue、もしくはheliopause64+technoteのあとに@gmail.comを付与したアドレスへのメールまで。
+          このサイトについてなど連絡事項がありましたら上記のTwitter、当サイトのGitHubの<a href="https://github.com/tasuten/notes/discussions">Discussions</a>や<a href="https://github.com/tasuten/notes/issues">Issues</a>、もしくはheliopause64+technoteのあとに@gmail.comを付与したアドレスへのメールまで。
         </p>
       </section>
       <section id="recently-posts">
