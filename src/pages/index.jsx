@@ -17,7 +17,8 @@ const BlogIndex = ({ data, location }) => {
           記事一覧については<Link to={"/all"}>/all</Link>より辿れます。
         </p>
         <p>
-          私自身についてはそのうちプロフィールページを別に作る予定ですが、上記以外のトピックについては『
+          私自身については<a href="https://tasuten.github.io">Tasuten</a>をご参照下さい。
+          上記以外のトピックについては『
           <a href="https://tasuten-diary.hatenablog.com/">鴨と子規と。</a>
           』というブログに書いています。また、
           <a href="https://twitter.com/tasuten">Twitter</a>および
