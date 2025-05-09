@@ -1,0 +1,31 @@
+@charset 'UTF-8';
+
+:root {
+  /* Typeface */
+  --font-family-latin: 'Fira Sans';
+  --font-family-text: var(--font-family-latin), sans-serif;
+  /* Windows:Consolas,  Apple: Menlo,  Android: Roboto Mono */
+  --font-family-code: Consolas, Menlo, 'Roboto Mono', monospace;
+
+  /* Font size */
+  --font-size-code: 0.9375em; /* 15/16 */
+  --font-size-smaller: 0.875em; /* 14/16 */
+  /* Japanese line-height is wider than English's. */
+  --line-height-base: 1.75;
+  --line-height-code: 1.5;
+  --line-height-heading: 1.5;
+
+  /* Colors */
+  --color-text: oklch(10% 0% 0);
+  /* auxiliary color
+   * e.g. ) blockquote's marker, ... */
+  --color-aux: oklch(58% 0% 0);
+
+  /* 40 Jp chars = 80 alphanums */
+  --max-width-content: 40ic;
+
+  --vspace-huge: 8rem;
+  --vspace-big: 5rem;
+  --vspace-normal: 1.5rem;
+  --vspace-small: 0.5rem;
+}

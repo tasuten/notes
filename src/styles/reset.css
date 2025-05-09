@@ -1,0 +1,104 @@
+@charset 'UTF-8';
+
+/* Acknowledgements:
+ * jgthms/minireset.css https://github.com/jgthms/minireset.css
+ * necolas/normalize.css https://github.com/necolas/normalize.css
+ * Browser Default Styles https://browserdefaultstyles.com/
+ * cf.:
+ * CSS2.2 Appendix D. Default style sheet for HTML 4
+ * https://www.w3.org/TR/CSS22/sample.html
+ */
+html {
+  box-sizing: border-box;
+}
+
+/* https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  /* Don't change text size on rotating mobile devices */
+  text-size-adjust: none;
+  /* For iOS safari */
+  -webkit-text-size-adjust: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* Outline must not be 0 without any focus style config
+   * for accessibility. */
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1;
+}
+
+/* These tags is setted non-normal size / weight
+ * font-size:
+ *   h1, h2, h3, h5, h6
+ *   smaller: small, sub, sup
+ * font-weight:
+ *   bolder: th, h1-h6, b, strong
+ * font-style:
+ *   italic: i, cite, em, var, address
+ * font-family:
+ *   monospace: pre, code, kbd, samp
+ * text-decoration:
+ *   line-through: s, del
+ *   underline: u, ins, :link, :visited (:link is not-visited link)
+ * text-align:
+ *   center: th, caption
+ * colors of `a` tag differ by browsers
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-size: 100%;
+}
+
+small,
+sub,
+sup {
+  font-size: smaller;
+}
+
+th,
+b,
+strong {
+  font-weight: bolder;
+}
+
+pre,
+code,
+kbd,
+samp {
+  /* biome-ignore lint/suspicious/noDuplicateFontNames: it's hack for some browsers  */
+  font-family: monospace, monospace; /* For Chrome odd sizing */
+  font-variant-ligatures: no-common-ligatures;
+  font-kerning: none;
+}
+
+/* ruby for Japanese */
+rt {
+  /* For non-Firefox browsers */
+  font-variant-east-asian: ruby;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/* hr shouts STYLE ME WELL! */
+hr {
+  border-top: 1px dashed #f00;
+}

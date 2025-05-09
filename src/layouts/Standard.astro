@@ -1,0 +1,35 @@
+---
+import Head from '@components/struct/head/Head.astro';
+import Footer from '@components/struct/body/Footer.astro';
+
+import { DESCRIPTION, LANG, TITLE } from '@site_metadata';
+
+const { title, description, useKatex, lang } = Astro.props;
+const page_lang = lang ? lang : LANG;
+const page_title = title ? `${title} - ${TITLE}` : TITLE;
+const page_desc = description ? description : DESCRIPTION;
+---
+
+<!doctype html>
+<html lang={page_lang}>
+  <head>
+    <Head title={page_title} description={page_desc} />
+    {
+      // self-hosting katex is so complex, it requires math fonts...
+      useKatex && (
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css"
+          integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP"
+          crossorigin="anonymous"
+        />
+      )
+    }
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,226 @@
+@charset 'UTF-8';
+
+@import '_config.css';
+@import '_heading.css';
+
+body {
+  color: var(--color-text);
+  font-family: var(--font-family-text);
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+  overflow-wrap: break-word;
+  max-width: var(--max-width-content);
+  hyphens: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+kbd {
+  font-family: var(--font-family-code);
+  border: 1px solid var(--color-text);
+  border-radius: 8px;
+  padding: 0.1em 0.2em;
+}
+
+code {
+  font-family: var(--font-family-code);
+  font-size: var(--font-size-code);
+
+  text-align: left;
+  white-space: pre-wrap;
+  word-spacing: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
+
+  tab-size: 4;
+
+  hyphens: none;
+}
+
+/* inline code */
+:not(pre) > code {
+  padding: 0 0.25em;
+}
+
+/* block code */
+pre > code {
+  line-height: var(--line-height-code);
+}
+
+/* essential margin */
+@media (max-width: 43ic) {
+  body {
+    margin-left: 1.5ic;
+    margin-right: 1.5ic;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  a:hover {
+    text-decoration: underline dotted;
+  }
+}
+
+/*
+rt {
+text-transform: full-size-kana;
+}
+*/
+
+small,
+sup,
+sub {
+  font-size: var(--font-size-smaller);
+}
+
+sup {
+  font-variant-position: super;
+}
+
+sub {
+  font-variant-position: sub;
+}
+
+h1,
+h2,
+h3 {
+  font-variant-east-asian: proportional-width;
+}
+
+p + p {
+  margin-top: var(--vspace-normal);
+}
+
+li {
+  margin-left: 1ic;
+}
+
+article img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+blockquote {
+  padding-left: 1ic;
+  border-left: var(--color-aux) solid 0.75em;
+}
+@media screen and (max-width: 767px) {
+  blockquote {
+    padding-left: 0.5ic;
+  }
+}
+blockquote cite {
+  display: block;
+  text-align: right;
+}
+
+table th,
+table td {
+  padding: 0.25rlh 2em;
+}
+@media screen and (max-width: 559px) {
+  table th,
+  table td {
+    padding: 0.25rlh 0.5em;
+  }
+}
+table th:first-child,
+table td:first-child {
+  padding-left: 0;
+}
+table th:last-child,
+table td:last-child {
+  padding-right: 0;
+}
+
+article blockquote,
+article pre,
+article table,
+article img,
+article ul,
+article ol,
+article span.katex-display {
+  margin-top: var(--vspace-normal);
+  margin-bottom: var(--vspace-normal);
+}
+
+article ul ul,
+article ul ol,
+article ol ul,
+article ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* katex hacks
+ * wrap well on small screen
+ * known bug:
+ * A case includes too long terms can't wrap well
+ * e.g.) 1111111...1 (1 x 100), 111,111,111,....111
+ */
+.katex-html {
+  white-space: pre-wrap;
+}
+
+/* screen reader :only-child
+ * for footnotes */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  word-wrap: normal;
+  border: 0;
+}
+
+sup > a[data-footnote-ref] {
+  text-decoration: none;
+}
+sup > a[data-footnote-ref]:hover {
+  text-decoration: underline;
+}
+
+section.footnotes {
+  font-size: var(--font-size-smaller);
+  margin-top: var(--vspace-big);
+}
+
+a[data-footnote-backref] {
+  margin-left: 0.25ic;
+  font-size: var(--font-size-smaller);
+  text-decoration: none;
+}
+a[data-footnote-backref]:hover {
+  text-decoration: underline;
+}
+
+#note-prologue {
+  margin-top: var(--vspace-big);
+  margin-bottom: var(--vspace-big);
+  text-align: center;
+}
+#note-prologue p {
+  margin-top: var(--vspace-small);
+}
+
+/* When main text starts with h2 heading */
+#note-prologue + section > h2:first-child {
+  margin-top: unset;
+}
+
+main + footer#site-footer {
+  margin-top: var(--vspace-huge);
+  margin-bottom: var(--vspace-big);
+}
+
+footer#site-footer {
+  text-align: center;
+}

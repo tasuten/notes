@@ -1,0 +1,36 @@
+@charset 'UTF-8';
+
+@import '_config.css';
+
+h1 {
+  font-size: 2rem;
+  line-height: var(--line-height-heading);
+}
+
+h2 {
+  font-size: 1.625rem;
+  line-height: var(--line-height-heading);
+  margin-top: var(--vspace-big);
+  margin-bottom: var(--vspace-small);
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: var(--line-height-heading);
+  margin-top: var(--vspace-normal);
+  margin-bottom: var(--vspace-small);
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: bold;
+}

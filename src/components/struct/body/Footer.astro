@@ -1,0 +1,31 @@
+---
+const base = import.meta.env.BASE_URL;
+const notTopPage = base !== Astro.url.pathname;
+---
+
+<footer id="site-footer">
+  <small>
+    {
+      notTopPage && (
+        <p id="about-site">
+          このサイトについての情報や記事一覧は<a href={base}>トップページ</a>を参照してください。
+        </p>
+      )
+    }
+    <p id="copyright">
+      <!-- Law hammer icon by the Digital Agency, Japanese Goverment -->
+      <!-- https://www.digital.go.jp/policies/servicedesign/designsystem/Illustration_Icons -->
+      <!-- And optimized by me(tasuten) -->
+      <svg width="1em" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          d="M11.8008 4.8L14.6008 2L20.2008 7.7L17.4008 10.5L11.8008 4.8ZM9.67578 6.93799L10.7364 5.87734L22.05 17.1909L20.9894 18.2516L9.67578 6.93799ZM3 19.5H16V21H3V19.5ZM8.59922 8L5.69922 10.8L11.3992 16.5L14.1992 13.7L8.59922 8Z"
+        ></path>
+      </svg>
+
+      Unless otherwise noted, content is licensed under
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"> CC-BY-4.0 </a>
+      .
+    </p>
+  </small>
+</footer>
