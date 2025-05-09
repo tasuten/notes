@@ -1,7 +1,7 @@
 ---
 title: 当サイトリニューアル報告
 description: 技術的な記事を置いておくこのサイトのリニューアル報告
-publishedDate: 2025-05-05
+publishedDate: 2025-05-09
 ---
 
 [5年ほど前に作ったっきり結局記事を書かなかったサイト](https://github.com/tasuten/notes-old)を
