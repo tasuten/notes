@@ -4,8 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
+    "check": "astro check --minimumFailingSeverity warning",
     "fix:biome": "biome check --write",
     "fix:astro": "prettier --write **/*.astro"
   },
