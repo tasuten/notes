@@ -28,6 +28,6 @@ jobs:
         working-directory: ${{ env.BUILD_PATH }}
       - name: Check with astro check
         run: |
-          npx astro check
+          npm run check
         working-directory: ${{ env.BUILD_PATH }}
 
