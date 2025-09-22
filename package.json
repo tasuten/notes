@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.3.5",
+    "@astrojs/mdx": "^4.3.6",
     "@fontsource/fira-sans": "^5.2.7",
     "astro": "^5.13.7",
     "cssnano": "^7.1.1",
