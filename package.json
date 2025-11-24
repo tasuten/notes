@@ -14,7 +14,7 @@
     "@astrojs/check": "^0.9.5",
     "@astrojs/mdx": "^4.3.11",
     "@fontsource/fira-sans": "^5.2.7",
-    "astro": "^5.15.9",
+    "astro": "^5.16.0",
     "cssnano": "^7.1.2",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
