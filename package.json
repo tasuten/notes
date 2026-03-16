@@ -11,7 +11,7 @@
     "fix:astro": "prettier --write **/*.astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
+    "@astrojs/check": "^0.9.8",
     "@astrojs/mdx": "^4.3.13",
     "@fontsource/fira-sans": "^5.2.7",
     "astro": "^5.18.0",
