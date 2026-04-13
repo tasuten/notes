@@ -18,7 +18,7 @@
     "cssnano": "^7.1.5",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
