@@ -21,7 +21,7 @@
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.4.15",
     "prettier-plugin-astro": "^0.14.1"
   }
 }
