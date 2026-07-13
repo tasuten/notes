@@ -21,7 +21,7 @@
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@astrojs/language-server": "^2.16.11",
+    "@astrojs/language-server": "^2.16.12",
     "@biomejs/biome": "2.5.1",
     "prettier-plugin-astro": "^0.14.1",
     "vscode-langservers-extracted": "^4.10.0"
