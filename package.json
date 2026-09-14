@@ -23,7 +23,7 @@
   "devDependencies": {
     "@astrojs/language-server": "^2.16.16",
     "@biomejs/biome": "2.5.12",
-    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-astro": "^1.0.0",
     "vscode-langservers-extracted": "^4.10.0"
   }
 }
